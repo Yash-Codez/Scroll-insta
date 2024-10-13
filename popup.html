@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instagram Scroller</title>
+</head>
+<body>
+  <button id="scrollBtn">Scroll Instagram</button>
+
+  <script>
+    document.getElementById('scrollBtn').addEventListener('click', () => {
+      chrome.scripting.executeScript({
+        target: {tabId: chrome.tabs.TAB_ID_NONE},
+        function: scrollToOldestPost
+      });
+    });
+  </script>
+</body>
+</html>

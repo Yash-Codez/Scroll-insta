@@ -1,0 +1,22 @@
+
+{
+    "manifest_version": 3,
+    "name": "Instagram Scroll Extension",
+    "version": "1.0",
+    "description": "Scroll down Instagram until the oldest post",
+    "permissions": ["activeTab", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Instagram Scroll"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.instagram.com/*"],
+        "js": ["background.js"]
+      }
+    ]
+  }
+  
